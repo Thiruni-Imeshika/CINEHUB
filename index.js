@@ -2,7 +2,9 @@ const apikey = "ac8ea43d";
 
 
 function search() {
-    let movieName = document.getElementById("movie").value;
+    let movieName = document.getElementById("movie");
+    if(!movieInput) return;
+    let movieName = movieInput.value;
     if (movieName.trim() !== "") {
         localStorage.setItem("targetMovie", movieName);
         window.location.href = "loaded.html";
@@ -12,13 +14,25 @@ function search() {
 }
 
 window.onload = async function() {
+    let movieInput = document.getElementById("movie");
+
+    if (movieInput) {
+        movieInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                search();
+            }
+        });
+    }
+
     let movieName = localStorage.getItem("targetMovie");
+    
     let titleElement = document.getElementById("title");
 
     if (titleElement && movieName) {
         try {
             
-            let response = await fetch(`https://www.omdbapi.com/?apikey=${apikey}&t=${encodeURIComponent(movieName)}`);
+            let response = await fetch(`http://localhost:3000/movie?t=${encodeURIComponent(movieName)}`);
             let data = await response.json();
 
             if (data.Response === "False") {
@@ -49,5 +63,6 @@ window.onload = async function() {
             console.error("Error fetching data:", error);
             titleElement.innerText = "Connection Error";
         }
+
     }
 }
