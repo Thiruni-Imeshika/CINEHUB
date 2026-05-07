@@ -1,5 +1,3 @@
-const apikey = "ac8ea43d";
-
 
 function search() {
     let movieName = document.getElementById("movie");
