@@ -63,4 +63,4 @@ window.onload = async function() {
         }
 
     }
-}
+};
