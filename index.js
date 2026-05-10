@@ -5,7 +5,7 @@ function search() {
     let movieName = movieInput.value;
     if (movieName.trim() !== "") {
         localStorage.setItem("targetMovie", movieName);
-        window.location.href = "loaded.html";
+        window.location.href = "./loaded.html";
     } else {
         alert("Please enter a movie name");
     }
