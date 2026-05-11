@@ -1,6 +1,6 @@
 
 function search() {
-    let movieName = document.getElementById("movie");
+    let movieInput= document.getElementById("movie");
     if(!movieInput) return;
     let movieName = movieInput.value;
     if (movieName.trim() !== "") {
