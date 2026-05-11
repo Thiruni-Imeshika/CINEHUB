@@ -23,7 +23,7 @@ CINEHUB is a responsive web application designed for cinema lovers to instantly 
 *   **JSON (JavaScript Object Notation):** The lightweight data format used for seamless communication and data exchange between the frontend, backend, and the OMDb API.
 *   **OMDB API:** The primary data source for movie metadata.
 *   **LocalStorage:** Used to pass search queries between the home and details pages seamlessly.
-*   **CORS (Cross-Origin Resource Sharing):**Implemented in the backend to allow secure communication between the frontend and the local server.
+*   **Cors(Cross-Origin Resource Sharing):** Implemented in the backend to allow secure communication between the frontend and the local server.
 *   **Dotenv:** Used to manage sensitive information like API keys through environment variables, following industry security best practices.
 *   
 ## Project Structure
